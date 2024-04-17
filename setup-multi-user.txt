@@ -1,0 +1,86 @@
+Generate private and public keys with two different account;
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh-keygen -t ed25519 -C "ramsagar.kyasan@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\Dell/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh-keygen -t ed25519 -C "ramsagar.kyasan@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\Dell/.ssh/id_ed25519): kramsagar
+kramsagar already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in kramsagar
+Your public key has been saved in kramsagar.pub
+The key fingerprint is:
+SHA256:6a458atFNp6JG38e6/NoKZNvvPJMMk5mwJMAaNzObII ramsagar.kyasan@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|..o              |
+|.o o             |
+|o + .            |
+|E. = o . .       |
+|  o   = S        |
+|      .O +       |
+|      oo%oo.     |
+|      .%*=B+     |
+|      =+=&X+.    |
++----[SHA256]-----+
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh-keygen -t ed25519 -C "ram.s.kyasan@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\Dell/.ssh/id_ed25519): kyasanram
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in kyasanram
+Your public key has been saved in kyasanram.pub
+The key fingerprint is:
+SHA256:xkA4dT/7o4ezlwT7cj+3QZ2+rRqzrtxM0MPbMKMyE2g ram.s.kyasan@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|     oo .        |
+|    o. . .       |
+|     ..   o      |
+|       +  .=    o|
+|      E S ooB  o.|
+|     . . ..+.Bo  |
+|        + .+B..o |
+|         =+=*=. =|
+|          =X*oo*o|
++----[SHA256]-----+
+
+
+Test the connectivity -> it will fail, as we not yet added public key at github remote machine
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh -T git@github-kyasanram
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Host key verification failed.
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh -T git@github-rkyasan
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Hi kramsagar! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+Dell@DESKTOP-7TUUEEC /cygdrive/d/Devops/2024-Q2/workspace/git_work/TigerProject/ram/aditya-jenkin/original-repo
+$ ssh -T git@github-kyasanram
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+Hi kyasanram! You've successfully authenticated, but GitHub does not provide shell access.
+

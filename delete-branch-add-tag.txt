@@ -1,0 +1,549 @@
+Microsoft Windows [Version 10.0.22631.3447]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Dell>d:
+
+D:\>cd D:\Devops\2024-Q2\workspace\git_work\user1
+
+D:\Devops\2024-Q2\workspace\git_work\user1>git clone git@github-rkyasan:kramsagar/original-repo.git
+Cloning into 'original-repo'...
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+remote: Enumerating objects: 111, done.
+remote: Counting objects: 100% (104/104), done.
+remote: Compressing objects: 100% (50/50), done.
+Receiving objects: 100% (111/111), 24.96 KiB | 381.00 KiB/s, done.
+Resolving deltas: 100% (30/30), done.
+remote: Total 111 (delta 30), reused 98 (delta 28), pack-reused 7
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work>cd user2
+
+D:\Devops\2024-Q2\workspace\git_work\user2>git clone git@github-kyasanram:kyasanram/original-repo.git
+Cloning into 'original-repo'...
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+remote: Enumerating objects: 108, done.
+remote: Counting objects: 100% (101/101), done.
+Receiving objects: 100% (108/108), 24.70
+remote: Compressing objects: 100% (47/47), done.
+remote: Total 108 (delta 29), reused 96 (delta 28), pack-reused 7
+Resolving deltas: 100% (29/29), done.
+
+D:\Devops\2024-Q2\workspace\git_work\user2>clear
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user2>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work>cd user1
+
+D:\Devops\2024-Q2\workspace\git_work\user1>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user1
+
+17-04-2024  08:50    <DIR>          .
+17-04-2024  08:46    <DIR>          ..
+17-04-2024  08:50    <DIR>          original-repo
+               0 File(s)              0 bytes
+               3 Dir(s)  757,535,416,320 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd original-repo
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+* master
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout -b shared-branch
+Switched to a new branch 'shared-branch'
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  master
+* shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user1\original-repo
+
+17-04-2024  08:50    <DIR>          .
+17-04-2024  08:50    <DIR>          ..
+17-04-2024  08:50                 0 a
+17-04-2024  08:50                19 adf
+17-04-2024  08:50    <DIR>          argocd
+17-04-2024  08:50                30 index.html
+17-04-2024  08:50                81 styles.css
+               4 File(s)            130 bytes
+               3 Dir(s)  757,535,416,320 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>touch common.txt
+'touch' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user1\original-repo
+
+17-04-2024  08:53    <DIR>          .
+17-04-2024  08:50    <DIR>          ..
+17-04-2024  08:50                 0 a
+17-04-2024  08:50                19 adf
+17-04-2024  08:50    <DIR>          argocd
+17-04-2024  08:54                34 common.txt
+17-04-2024  08:50                30 index.html
+17-04-2024  08:50                81 styles.css
+               5 File(s)            164 bytes
+               3 Dir(s)  757,535,412,224 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git add common.txt
+warning: in the working copy of 'common.txt', LF will be replaced by CRLF the next time Git touches it
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git commit -m "added by user1"
+[shared-branch 8b00bec] added by user1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 common.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git remote -v
+origin  git@github-rkyasan:kramsagar/original-repo.git (fetch)
+origin  git@github-rkyasan:kramsagar/original-repo.git (push)
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  master
+* shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin shared-branch
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github-rkyasan:kramsagar/original-repo.git
+   362ef64..8b00bec  shared-branch -> shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd user1
+The system cannot find the path specified.
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work>cd user2
+
+D:\Devops\2024-Q2\workspace\git_work\user2>cd original-repo
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user2\original-repo
+
+17-04-2024  08:51    <DIR>          .
+17-04-2024  08:50    <DIR>          ..
+17-04-2024  08:51                 0 a
+17-04-2024  08:51                19 adf
+17-04-2024  08:51    <DIR>          argocd
+17-04-2024  08:51                30 index.html
+17-04-2024  08:51                48 styles.css
+               4 File(s)             97 bytes
+               3 Dir(s)  757,535,412,224 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git add common.txt
+warning: in the working copy of 'common.txt', LF will be replaced by CRLF the next time Git touches it
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git commit -m "by user2"
+[master 38f7a2a] by user2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 common.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git remote -v
+origin  git@github-kyasanram:kyasanram/original-repo.git (fetch)
+origin  git@github-kyasanram:kyasanram/original-repo.git (push)
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git branch
+* master
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git checkout -b shared-user2
+Switched to a new branch 'shared-user2'
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user2\original-repo
+
+17-04-2024  08:57    <DIR>          .
+17-04-2024  08:50    <DIR>          ..
+17-04-2024  08:51                 0 a
+17-04-2024  08:51                19 adf
+17-04-2024  08:51    <DIR>          argocd
+17-04-2024  08:57                25 common.txt
+17-04-2024  08:51                30 index.html
+17-04-2024  08:51                48 styles.css
+               5 File(s)            122 bytes
+               3 Dir(s)  757,535,408,128 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git add common.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git commit -m "by user2"
+On branch shared-user2
+nothing to commit, working tree clean
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git status
+On branch shared-user2
+nothing to commit, working tree clean
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git push origin shared-user2
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'shared-user2' on GitHub by visiting:
+remote:      https://github.com/kyasanram/original-repo/pull/new/shared-user2
+remote:
+To github-kyasanram:kyasanram/original-repo.git
+ * [new branch]      shared-user2 -> shared-user2
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git pull
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 3), reused 6 (delta 1), pack-reused 0
+Unpacking objects: 100% (9/9), 1.53 KiB | 2.00 KiB/s, done.
+From github-kyasanram:kyasanram/original-repo
+   38f7a2a..ee5b3cc  shared-user2 -> origin/shared-user2
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> shared-user2
+
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>ls -ltr
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user2\original-repo
+
+17-04-2024  08:57    <DIR>          .
+17-04-2024  08:50    <DIR>          ..
+17-04-2024  08:51                 0 a
+17-04-2024  08:51                19 adf
+17-04-2024  08:51    <DIR>          argocd
+17-04-2024  08:57                25 common.txt
+17-04-2024  08:51                30 index.html
+17-04-2024  08:51                48 styles.css
+               5 File(s)            122 bytes
+               3 Dir(s)  757,535,289,344 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>cat common.txt
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git pull
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> shared-user2
+
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>kyasanram
+'kyasanram' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>git pull origin shared-user2
+Enter passphrase for key 'C:\Users\Dell\.ssh\kyasanram':
+From github-kyasanram:kyasanram/original-repo
+ * branch            shared-user2 -> FETCH_HEAD
+Updating 38f7a2a..ee5b3cc
+Fast-forward
+ common.txt | 2 ++
+ styles.css | 1 +
+ 2 files changed, 3 insertions(+)
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>^A^A^A
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user2\original-repo>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work\user2>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work>cd user1
+
+D:\Devops\2024-Q2\workspace\git_work\user1>git remote -v
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd original-repo
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git remote 0v
+error: unknown subcommand: `0v'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git remote -v
+origin  git@github-rkyasan:kramsagar/original-repo.git (fetch)
+origin  git@github-rkyasan:kramsagar/original-repo.git (push)
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>cd ,,
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>cd ..
+
+D:\Devops\2024-Q2\workspace\git_work\user1>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Devops\2024-Q2\workspace\git_work\user1>dir
+ Volume in drive D is DATA
+ Volume Serial Number is 9A66-C7B0
+
+ Directory of D:\Devops\2024-Q2\workspace\git_work\user1
+
+17-04-2024  08:50    <DIR>          .
+17-04-2024  08:46    <DIR>          ..
+17-04-2024  08:53    <DIR>          original-repo
+               0 File(s)              0 bytes
+               3 Dir(s)  757,531,521,024 bytes free
+
+D:\Devops\2024-Q2\workspace\git_work\user1>cd original-repo
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git pull
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 2), reused 5 (delta 2), pack-reused 0
+Unpacking objects: 100% (7/7), 2.10 KiB | 4.00 KiB/s, done.
+From github-rkyasan:kramsagar/original-repo
+   8b00bec..74ff003  shared-branch -> origin/shared-branch
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> shared-branch
+
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  master
+* shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git pull origin shared-branch
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+From github-rkyasan:kramsagar/original-repo
+ * branch            shared-branch -> FETCH_HEAD
+Updating 8b00bec..74ff003
+Fast-forward
+ common.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git merge shared-branch
+Updating ea0ff67..74ff003
+Fast-forward
+ common.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 common.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin master
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github-rkyasan:kramsagar/original-repo.git
+   ea0ff67..74ff003  master -> master
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git pull origin master
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+From github-rkyasan:kramsagar/original-repo
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout -b feature-login
+Switched to a new branch 'feature-login'
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+* feature-login
+  master
+  shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git add .
+warning: in the working copy of 'setup-multi-user.txt', LF will be replaced by CRLF the next time Git touches it
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git commit -m "added notes by user1"
+[feature-login 8a714c9] added notes by user1
+ 1 file changed, 86 insertions(+)
+ create mode 100644 setup-multi-user.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin feature-login
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.36 KiB | 1.36 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature-login' on GitHub by visiting:
+remote:      https://github.com/kramsagar/original-repo/pull/new/feature-login
+remote:
+To github-rkyasan:kramsagar/original-repo.git
+ * [new branch]      feature-login -> feature-login
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout -b develop
+Switched to a new branch 'develop'
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git merge feature-logn
+merge: feature-logn - not something we can merge
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git merge feature-login
+Already up to date.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout -b release-1.0
+Switched to a new branch 'release-1.0'
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin release-1.0
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'release-1.0' on GitHub by visiting:
+remote:      https://github.com/kramsagar/original-repo/pull/new/release-1.0
+remote:
+To github-rkyasan:kramsagar/original-repo.git
+ * [new branch]      release-1.0 -> release-1.0
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  develop
+  feature-login
+  master
+* release-1.0
+  shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git tag -a v1.0 -m "Release 1.0"
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git tag -v
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git tag
+v1.0
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push orgin v1.0
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin v1.0
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 176 bytes | 176.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github-rkyasan:kramsagar/original-repo.git
+ * [new tag]         v1.0 -> v1.0
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  develop
+  feature-login
+  master
+* release-1.0
+  shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git merge release-1.0
+Updating 74ff003..8a714c9
+Fast-forward
+ setup-multi-user.txt | 86 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 86 insertions(+)
+ create mode 100644 setup-multi-user.txt
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin master
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin master
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github-rkyasan:kramsagar/original-repo.git
+   74ff003..8a714c9  master -> master
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch
+  develop
+  feature-login
+* master
+  release-1.0
+  shared-branch
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch -d release1.0
+error: branch 'release1.0' not found.
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git branch -d release-1.0
+Deleted branch release-1.0 (was 8a714c9).
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>git push origin --delete release-1.0
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+Enter passphrase for key 'C:\Users\Dell\.ssh\kramsagar':
+To github-rkyasan:kramsagar/original-repo.git
+ - [deleted]         release-1.0
+
+D:\Devops\2024-Q2\workspace\git_work\user1\original-repo>
